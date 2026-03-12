@@ -1,0 +1,25 @@
+class AtMostKOddSubarrays{
+    public static void main(String[] args){
+        int[] arr={2,1,3};
+        int l=0,temp=0;
+        int n=arr.length;
+        int k=1;
+        int ans=0;
+        for(int r=0;r<n;r++)
+        {
+            if(arr[r]%2==1){
+                temp++;
+            }
+            while(temp>k){
+                if(arr[l]%2==1)
+                {
+                    temp--;
+                }
+                l++;
+            }
+            System.out.println("l="+l+" "+"r"+r);
+            ans+=(r-l+1);
+        }
+        System.out.println(ans);
+    }
+}
